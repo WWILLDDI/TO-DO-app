@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO APP</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Get Serious. Get To Do list.</h1>
+
+    <div class="all-tasks">
+      <h2 class="task-list-title">My lists</h2>
+      <ul class="task-list">
+        <li class="active-list">Groceries</li>
+        <li>Workout</li>
+        <li>Study</li>
+      </ul>
+
+      <form action="">
+        <input
+          type="text"
+          class="new list"
+          placeholder="new list name"
+          aria-label="new list name"
+        />
+        <button class="btn list" aria-label="create new list">
+          <i class="material-symbols-outlined">Add</i>
+        </button>
+      </form>
+    </div>
+
+    <div class="todo-list">
+      <div class="todo-header">
+        <h2 class="list-title">Groceries</h2>
+        <p class="task-count">5 tasks remaining</p>
+      </div>
+
+      <div class="todo-body">
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="task-1" />
+            <label for="task-1">
+              <span class="custom-checkbox"></span>Buy a soda for the
+              party</label
+            >
+          </div>
+          <!-- /task-1 -->
+
+          <div class="task">
+            <input type="checkbox" id="task-2" />
+            <label for="task-2">
+              <span class="custom-checkbox"></span>Broccolli</label
+            >
+          </div>
+          <!-- /task-2 -->
+
+          <div class="task">
+            <input type="checkbox" id="task-3" />
+            <label for="task-3">
+              <span class="custom-checkbox"></span>Olives</label
+            >
+          </div>
+          <!-- /task-3 -->
+
+          <div class="task">
+            <input type="checkbox" id="task-4" />
+            <label for="task-4">
+              <span class="custom-checkbox"></span>Spinach</label
+            >
+          </div>
+          <!-- /task-4 -->
+
+          <div class="task">
+            <input type="checkbox" id="task-5" />
+            <label for="task-5">
+              <span class="custom-checkbox"></span>Tofu</label
+            >
+          </div>
+          <!-- /task-5 -->
+        </div>
+        <div class="new-task-creator">
+          <form action="">
+            <input
+              type="text"
+              class="new list"
+              placeholder="new task name"
+              aria-label="new task name"
+            />
+            <button class="btn task" aria-label="create new task">
+              <i class="material-symbols-outlined">Add</i>
+            </button>
+          </form>
+        </div>
+        <div class="delete-things">
+          <button class="btn delete">Clear completed tasks</button
+          ><button class="btn delete">Delete list</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

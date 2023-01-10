@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+  --color-primary: #ffe9c2;
+  --color-text: #000c14;
+  /* --color-light: #fff8eb; */
+  --color-dark: #ffc49b;
+  --color-warn: #cc5500;
+  --color-blue: #adb6c4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  background-color: var(--color-primary);
+  color: #000c14;
+
+  display: grid;
+  grid:
+    'header header header header' auto
+    '...... lists active ......' auto /
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+.title {
+  grid-area: header;
+  text-align: center;
+  font-size: calc(7vw + 2rem);
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.2);
+  margin: -0.1em 0 0.5em;
+}
+
+.all-tasks {
+  grid-area: lists;
+}
+
+.task-list {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.7;
+  list-style: none;
+}
+
+.todo-list {
+  grid-area: active;
+}
