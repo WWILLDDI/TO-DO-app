@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 :root {
-  --color-primary: #ffe9c2;
+  --color-primary: #ffc49b;
+  --color-secondary: #ffe9c2;
+  --color-tertiary: #fff8eb;
   --color-text: #000c14;
-  /* --color-light: #fff8eb; */
-  --color-dark: #ffc49b;
   --color-warn: #cc5500;
   --color-blue: #adb6c4;
 }
@@ -18,16 +18,16 @@
 
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
   background-color: var(--color-primary);
-  color: #000c14;
+  color: var(--color-text);
 
   display: grid;
   grid:
-    'header header header header' auto
-    '...... lists active ......' auto /
+    "header header header header" auto
+    "...... lists active ......" auto /
     1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
 }
 
@@ -46,11 +46,77 @@ body {
 
 .task-list {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.7;
+  padding-left: 0;
   list-style: none;
+}
+
+form {
+  display: flex;
+}
+
+.material-symbols-outlined {
+  height: 24px;
+  width: 24px;
+}
+
+.btn,
+.btn.task {
+  display: flex;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  border-radius: 100px;
+  padding: 2px 2px;
+  margin-right: 10px;
+  border: 1px solid #000c14;
+  justify-content: center;
+
+  transition: all 0.3s;
+}
+
+.btn.task {
+  background-color: var(--color-secondary);
+}
+
+.btn:hover {
+  background-color: var(--color-tertiary);
+}
+
+.new {
+  background: transparent;
+  background-color: var(--color-tertiary);
+  border: none;
+  border-radius: 50px;
+  padding: 5px 10px;
+  /* font-size: 1.2rem; */
+  font-size: 1rem;
+
+  outline: none;
+  order: 2;
+}
+
+.new:focus {
+  background-color: rgba(255, 248, 235, 0.7);
+}
+
+.new:focus::placeholder {
+  opacity: 0.2;
+}
+
+.active-list {
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .todo-list {
   grid-area: active;
+  padding: 15px 30px;
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+}
+
+.task-form {
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
