@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 :root {
-  --color-primary: #ffc49b;
+  /* --color-primary: #ffc49b; */
+  --color-primary: #d6dbe2;
   --color-secondary: #ffe9c2;
   --color-tertiary: #fff8eb;
   --color-text: #000c14;
   --color-warn: #cc5500;
-  --color-blue: #adb6c4;
+  /* --color-blue: #adb6c4; */
+  /* --color-blue: #d6dbe2; */
+  --color-accent: #ffc49b;
+
+  --list-padding: 1.5rem;
 }
 
 *,
@@ -50,6 +55,11 @@ body {
   line-height: 1.7;
   padding-left: 0;
   list-style: none;
+}
+
+.task-form {
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 form {
@@ -105,18 +115,41 @@ form {
 }
 
 .active-list {
+  width: 7.5rem;
   font-weight: 700;
   letter-spacing: 2px;
+  background-color: var(--color-accent);
+  padding: 3px 6px;
+  border-radius: 10px;
 }
 
 .todo-list {
   grid-area: active;
-  padding: 15px 30px;
+  /* padding: var(--list-padding); */
+  /* padding: 10px 15px; */
   background-color: var(--color-secondary);
   border-radius: 10px;
+  color: var(--color-text);
 }
 
-.task-form {
-  margin-top: 50px;
-  margin-bottom: 25px;
+.todo-header {
+  background: var(--color-accent);
+  padding: var(--list-padding);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-title {
+  margin: 0;
+}
+
+.task-count {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.todo-body {
+  padding: var(--list-padding);
 }
