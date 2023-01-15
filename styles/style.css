@@ -96,7 +96,7 @@ form {
   transition: all 0.3s;
 }
 
-.btn.task {
+.btn.task-create {
   background-color: var(--color-secondary);
 }
 
@@ -168,11 +168,27 @@ form {
 
 .task {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -8px;
+  height: 1px;
+  background: var(--color-accent);
+  opacity: 1;
 }
 
 .checkbox-input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 .checkbox-label {
