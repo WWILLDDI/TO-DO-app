@@ -60,12 +60,15 @@ body {
 }
 
 .list-name {
+  width: 7.5rem;
+  padding: 3px 6px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .list-name:hover {
-  color: rgba(0, 12, 20, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 8px 8px -4px rgba(0, 12, 20, 0.2);
 }
 
 .task-form {
@@ -102,6 +105,26 @@ form {
 
 .btn:hover {
   background-color: var(--color-tertiary);
+}
+
+.btn.delete {
+  display: inline-block;
+  font-weight: 500;
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 50px;
+  padding: 5px 10px;
+  box-shadow: 0 8px 8px -4px rgba(0, 12, 20, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn.delete:hover {
+  background-color: #ffa768;
+}
+
+.btn.delete:active {
+  background-color: rgba(255, 167, 104, 0.8);
+  box-shadow: none;
 }
 
 .new {
@@ -141,6 +164,8 @@ form {
   background-color: var(--color-secondary);
   border-radius: 10px;
   color: var(--color-text);
+
+  box-shadow: 10px 10px 30px 4px rgba(0, 12, 20, 0.2);
 }
 
 .todo-header {
@@ -170,6 +195,7 @@ form {
   display: block;
   margin-bottom: 15px;
   position: relative;
+  backface-visibility: hidden;
 }
 
 .task::after {
@@ -230,4 +256,22 @@ form {
 
 .checkbox-input:checked ~ .checkbox-label .custom-checkbox::after {
   opacity: 1;
+}
+
+.task label::after {
+  content: "";
+  position: absolute;
+  left: 35px;
+  right: 0;
+  height: 3px;
+  top: 15px;
+  background: rgba(0, 0, 0, 0.2);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.checkbox-input:checked ~ .checkbox-label::after {
+  transform: scaleX(1);
 }
