@@ -49,6 +49,7 @@ body {
 
 .all-tasks {
   grid-area: lists;
+  margin-left: 10px;
 }
 
 .task-list {
@@ -59,16 +60,32 @@ body {
   list-style: none;
 }
 
+/* .task-list-title */
+
 .list-name {
-  width: 7.5rem;
-  padding: 3px 6px;
+  display: block;
+  width: 130px;
+  padding: 3px 9px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: transform 0.2s;
 }
 
-.list-name:hover {
-  border-radius: 8px;
-  box-shadow: 0 8px 8px -4px rgba(0, 12, 20, 0.2);
+.list-name::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width .3s;
+}
+
+.list-name:hover::after {
+  width: 100%;
+
+}
+
+.list-name:focus,
+.list-name:active {
 }
 
 .task-form {
@@ -149,18 +166,15 @@ form {
 }
 
 .active-list {
-  width: 7.5rem;
   font-weight: 700;
   letter-spacing: 2px;
   background-color: var(--color-accent);
-  padding: 3px 6px;
   border-radius: var(--border-radius-small);
 }
 
 .todo-list {
   grid-area: active;
-  /* padding: var(--list-padding); */
-  /* padding: 10px 15px; */
+  margin-right: 10px;
   background-color: var(--color-secondary);
   border-radius: 10px;
   color: var(--color-text);
