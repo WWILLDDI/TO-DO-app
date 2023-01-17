@@ -7,6 +7,7 @@
     <title>TO DO APP</title>
 
     <link rel="stylesheet" href="styles/style.css" />
+    <script defer src="script.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +22,7 @@
     />
     <style>
       .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
       }
     </style>
   </head>
@@ -30,16 +31,17 @@
 
     <div class="all-tasks">
       <h2 class="task-list-title">My lists</h2>
-      <ul class="task-list">
-        <li class="list-name active-list">Groceries</li>
+      <ul class="task-list" data-lists>
+        <!-- <li class="list-name active-list">Groceries</li>
         <li class="list-name">Workout</li>
-        <li class="list-name">Study</li>
+        <li class="list-name">Study</li> -->
       </ul>
 
-      <form action="">
+      <form action="" data-new-list-form>
         <input
           type="text"
           class="new list"
+          data-new-list-input
           placeholder="new list name"
           aria-label="new list name"
         />
