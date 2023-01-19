@@ -51,14 +51,14 @@
       </form>
     </div>
 
-    <div class="todo-list">
+    <div class="todo-list" data-list-display-container>
       <div class="todo-header">
-        <h2 class="todo-title">Groceries</h2>
-        <p class="task-count">5 tasks remaining</p>
+        <h2 class="todo-title" data-list-title>Groceries</h2>
+        <p class="task-count" data-list-count>5 tasks remaining</p>
       </div>
 
       <div class="todo-body">
-        <div class="tasks">
+        <div class="tasks" data-tasks>
           <div class="task">
             <input type="checkbox" class="checkbox-input" id="task-1" />
 
@@ -93,12 +93,6 @@
           </div>
           <!-- /task-4 -->
 
-          <div class="task">
-            <input type="checkbox" class="checkbox-input" id="task-5" />
-            <label for="task-5" class="checkbox-label"
-              ><span class="custom-checkbox"></span> Tofu</label
-            >
-          </div>
           <!-- /task-5 -->
         </div>
         <div class="new-task-creator">
@@ -116,9 +110,19 @@
         </div>
         <div class="delete-things">
           <button class="btn delete">Clear completed tasks</button
-          ><button class="btn delete">Delete list</button>
+          ><button class="btn delete" data-delete-list-button>
+            Delete list
+          </button>
         </div>
       </div>
     </div>
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" class="checkbox-input" />
+        <label class="checkbox-label"
+          ><span class="custom-checkbox"></span
+        ></label>
+      </div>
+    </template>
   </body>
 </html>
