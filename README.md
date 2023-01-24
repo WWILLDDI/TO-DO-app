@@ -1,18 +1,12 @@
 # TO-DO-app
  To-do app with JS / HTML / CSS 
-
-This project i made using HTML, CSS, and JavaScript. This included creating the layout, implementing responsive design, and adding visual elements to enhance the user experience.
-
-I developed this to-do app project with a focus on meeting the criteria 
-*of ease of use: nice and minimalistic ui/ux design
-*functionality: implement the core features of to-do app, such as creating lists and tasks, count remaining tasks and deleting them
-*accessibility
-*responsiveness 
-*cross-browser compatibility
+ 
+I developed this to-do app project using HTML, CSS, and JavaScript. This included creating the layout, implementing responsive design, and adding visual elements to enhance the user experience. Also with a focus on meeting the criteria of ease of use(nice and minimalistic ui/ux design), functionality(implement the core features of to-do app, such as creating lists and tasks, count remaining tasks and deleting them), accessibility, responsiveness and cross-browser compatibility.
 
 I used vanilla JavaScript to build this app, and also used different properties and methods of DOM, such as EventTarget.addEventListener(), Node.appendChild(), Event.preventDefault().
 
-I learned a lot about building a web application using vanilla JavaScript. I also improved my skills in HTML, CSS, and JavaScript, which will be beneficial for my future development projects.
+I learned a lot, during developing this project and it was really fun.
+Hope, you'll use and enjoy it too!
 
 ![todo1](https://user-images.githubusercontent.com/107324813/214294723-dfb0623d-0a2c-486b-9d31-d27c65c73cd2.gif)
 
