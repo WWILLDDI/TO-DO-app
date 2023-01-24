@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 :root {
   /* --color-primary: #ffc49b; */
@@ -25,16 +25,17 @@
 
 body {
   margin: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
   background-color: var(--color-primary);
   color: var(--color-text);
+  transition: all 0.2s linear;
 
   display: grid;
   grid:
-    "header header header header" auto
-    "...... lists active ......" auto /
+    'header header header header' auto
+    '...... lists active ......' auto /
     1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
 }
 
@@ -55,17 +56,15 @@ body {
 .task-list {
   font-size: 1.2rem;
   font-weight: 600;
-  line-height: 1.7;
+  line-height: 1.8;
   padding-left: 0;
   list-style: none;
 }
 
-/* .task-list-title */
-
 .list-name {
   display: block;
   width: 130px;
-  padding: 3px 9px;
+  padding: 3px 12px;
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -76,16 +75,11 @@ body {
   width: 0;
   height: 2px;
   background: var(--color-accent);
-  transition: width .3s;
+  transition: width 0.3s;
 }
 
 .list-name:hover::after {
   width: 100%;
-
-}
-
-.list-name:focus,
-.list-name:active {
 }
 
 .task-form {
@@ -213,7 +207,7 @@ form {
 }
 
 .task::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   left: 0;
@@ -251,7 +245,7 @@ form {
 }
 
 .custom-checkbox::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   left: 5px;
@@ -273,7 +267,7 @@ form {
 }
 
 .task label::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 35px;
   right: 0;
