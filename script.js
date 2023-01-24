@@ -11,8 +11,11 @@ const listTitleElement = document.querySelector('[data-list-title]');
 const listCountElement = document.querySelector('[data-list-count]');
 const tasksContainer = document.querySelector('[data-tasks]');
 const taskTemplate = document.getElementById('task-template');
-const newTaskForm = document.getElementById('[data-new-task-form]');
-const newTaskInput = document.getElementById('[data-new-task-input]');
+const newTaskForm = document.querySelector('[data-new-task-form]');
+const newTaskInput = document.querySelector('[data-new-task-input]');
+const clearCompleteTasksButton = document.querySelector(
+  '[data-clear-complete-tasks-button]'
+);
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists';
 const LOCAL_STORAGE_SELECTED_ID_LIST_KEY = 'task.selectedListId';
@@ -40,6 +43,13 @@ tasksContainer.addEventListener('click', e => {
   //Compare our task id to our checkbox id. If someone mathces, that's gonna be the task that we just clicked as done.
 });
 
+clearCompleteTasksButton.addEventListener('click', e => {
+  const selectedList = lists.find(list => list.id === selectedListId);
+  selectedList.tasks = selectedList.tasks.filter(task => !task.complete);
+  //All the tasks that are not complete we want to keep
+  saveAndRender();
+});
+
 deleteListButton.addEventListener('click', e => {
   lists = lists.filter(list => list.id !== selectedListId);
   selectedListId = null;
@@ -59,16 +69,17 @@ newListForm.addEventListener('submit', e => {
   saveAndRender();
 });
 
-// newTaskForm.addEventListener('submit', e => {
-//   e.preventDefault();
-//   const taskName = newTaskInput.value;
-//   if (taskName == null || taskName === '') return;
-//   const task = createTask(taskName);
-//   newTaskInput.value = '';
-//   const selectedList = lists.find(list => list.id === selectedListId);
-//   selectedList.tasks.push(task);
-//   saveAndRender();
-// });
+newTaskForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const taskName = newTaskInput.value;
+  if (taskName == null || taskName === '') return;
+  const task = createTask(taskName);
+  newTaskInput.value = null;
+  const selectedList = lists.find(list => list.id === selectedListId);
+  selectedList.tasks.push(task);
+  saveAndRender();
+});
+// Compare is  list.id equal to selected list.id. And we want to add new task that we just created.
 
 function createList(name) {
   return {
@@ -118,7 +129,7 @@ function render() {
 
 function renderTasks(selectedList) {
   selectedList.tasks.forEach(task => {
-    const taskElement = document.importNode(taskTemplate.contentEditable, true);
+    const taskElement = document.importNode(taskTemplate.content, true);
     const checkbox = taskElement.querySelector('input');
     checkbox.id = task.id;
     checkbox.checked = task.complete;
